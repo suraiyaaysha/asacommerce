@@ -44,7 +44,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-        // return redirect('admin/category')->with('message', 'Category Added Successfully');
+        return redirect('admin/category')->with('message', 'Category Added Successfully');
         
     }
 }

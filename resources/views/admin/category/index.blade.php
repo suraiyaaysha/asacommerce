@@ -4,6 +4,9 @@
     
   <div class="row">
       <div class="col-md-12">
+
+        <div class="alert alert-success">{{ session('message') }}</div>
+
         <div class="card">
           <div class="card-header">
             <h3>Category 
@@ -11,7 +14,7 @@
               </h3>
           </div>
           <div class="card-body">
-
+hekko
           </div>
         </div>
       </div>
