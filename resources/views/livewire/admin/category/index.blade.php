@@ -58,7 +58,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary text-white" data-bs-dismiss="modal">Yes</button>
+                <button type="submit" class="btn btn-primary text-white">Yes</button>
             </div>
         </form>
 
@@ -67,3 +67,11 @@
 </div>
 
 </div>
+
+@push('script')
+<script>
+    window.addEventListener('close-modal', event => {
+      $('#deleteModal').modal('hide');
+    });
+</script>  
+@endpush
