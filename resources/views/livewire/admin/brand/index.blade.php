@@ -1,5 +1,5 @@
 <div>
-    
+
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -26,7 +26,7 @@
                                 <td>{{ $brand->slug }}</td>
                                 <td>{{ $brand->status == '1' ? 'hidden': 'visible' }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#updateBrandModal">Edit</a>
+                                    <a href="#" class="btn btn-sm btn-success" wire:click="editBrand({{ $brand->id }})" data-bs-toggle="modal" data-bs-target="#updateBrandModal">Edit</a>
                                     <a href="#" class="btn btn-sm btn-delete">Delete</a>
                                 </td>
                             </tr>
@@ -47,8 +47,8 @@
             </div>
         </div>
     </div>
-    @include('livewire.admin.brand.modal-form')
 
+    @include('livewire.admin.brand.modal-form')
 </div>
 
 @push('script')
@@ -56,11 +56,11 @@
     window.addEventListener('close-modal', event => {
       $('#addBrandModal').modal('hide');
     });
-</script>  
+</script>
 @push('script')
 <script>
     window.addEventListener('close-modal', event => {
       $('#updateBrandModal').modal('hide');
     });
-</script>  
+</script>
 @endpush
