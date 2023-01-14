@@ -42,12 +42,25 @@ class Index extends Component
         $this->resetInput();
     }
 
+    public function closeModal() {
+        $this->resetInput();
+    }
+
+    public function openModal() {
+        $this->resetInput();
+    }
+
+    public function editBrand(int $brand_id) {
+        $brand = Brand::findOrFail($brand_id);
+        $this->name = $brand->name;
+        $this->slug = $brand->slug;
+        $this->status = $brand->status;
+    }
+
     public function render()
     {
         // $brands = Brand::all();
         $brands = Brand::orderBy('id', 'DESC')->paginate(10);
-        return view('livewire.admin.brand.index', ['brands'=> $brands])
-                    ->extends('layouts.admin')
-                    ->section('content');
+        return view('livewire.admin.brand.index', ['brands' => $brands])->extends('layouts.admin')->section('content');
     }
 }
